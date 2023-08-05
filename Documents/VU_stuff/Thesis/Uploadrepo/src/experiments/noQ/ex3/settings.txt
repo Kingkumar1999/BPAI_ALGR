@@ -1,0 +1,25 @@
+        self.gender = 0
+
+class SimulationRobobo(Robobo):
+    def __init__(self, number=""):
+        self._clientID = None
+        self._value_number = number
+
+        # Variables
+        self.lifespan = 200
+        self.init_pop_size = 10
+
+        self.max_pop_size = 25
+        self.mentalStack = 2
+        self.dataPointsPer = 3
+        self.range = 0.3
+        self.mutation_rate = 0.2
+        self.speed = 30
+        self.move_time = 150
+
+        # Setup
+        self.population = []
+        self.dead = set(np.arange(self.max_pop_size))
+        self.alive = set()
+        for i in range(self.max_pop_size):
+            self.population.append(Robot(i))
